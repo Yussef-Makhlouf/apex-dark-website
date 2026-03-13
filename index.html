@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APEX Studio — Digital Partners for Ambitious Brands</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* ── HERO ── */
+.hero{
+  min-height:100vh;padding-top:65px;
+  display:grid;grid-template-columns:1fr 1fr;
+  border-bottom:1px solid var(--line);
+}
+.hero-left{
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:4.5rem 3rem 3.5rem;
+  border-right:1px solid var(--line);
+  position:relative;overflow:hidden;
+}
+.hero-grid-bg{
+  position:absolute;inset:0;z-index:0;
+  background-image:
+    linear-gradient(var(--line) 1px,transparent 1px),
+    linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:72px 72px;
+  mask-image:radial-gradient(ellipse 70% 70% at 20% 80%,black 0%,transparent 100%);
+}
+.hero-left-content{position:relative;z-index:1}
+.hero-avail{
+  display:inline-flex;align-items:center;gap:.65rem;
+  padding:.4rem .9rem;
+  border:1px solid rgba(200,240,53,.25);
+  margin-bottom:2rem;
+}
+.h-dot{width:7px;height:7px;border-radius:50%;background:var(--lime);animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(200,240,53,.4)}50%{box-shadow:0 0 0 8px rgba(200,240,53,0)}}
+.h-avail-text{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.14em;color:var(--lime)}
+
+.hero-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(5rem,10vw,11.5rem);
+  line-height:.82;letter-spacing:.01em;
+  margin-bottom:2.5rem;
+}
+.hero-title .solid{display:block;color:var(--white)}
+.hero-title .outline{
+  display:block;
+  -webkit-text-stroke:1px rgba(255,255,255,.2);
+  color:transparent;
+}
+.hero-sub{
+  font-size:.95rem;line-height:1.8;
+  color:var(--muted);font-weight:300;
+  max-width:380px;margin-bottom:2.5rem;
+}
+.hero-actions{display:flex;gap:.75rem;flex-wrap:wrap}
+
+.hero-left-bottom{
+  display:flex;gap:3rem;position:relative;z-index:1;
+  border-top:1px solid var(--line);padding-top:1.75rem;
+}
+.hl-stat .val{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:2.4rem;line-height:1;color:var(--lime);
+}
+.hl-stat .lbl{font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.12em;color:var(--muted);margin-top:.2rem}
+
+/* Hero right — sliding project tabs */
+.hero-right{
+  display:flex;flex-direction:column;
+  background:var(--bg2);position:relative;overflow:hidden;
+}
+.hr-label{
+  position:absolute;top:2.5rem;left:2rem;
+  font-family:'DM Mono',monospace;
+  font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);z-index:2;
+}
+.hero-slides{position:absolute;inset:0;display:flex;flex-direction:column;padding-top:5rem}
+.hero-slide{
+  flex:1;display:flex;align-items:flex-end;
+  padding:1.5rem 2.5rem;
+  border-top:1px solid var(--line);
+  cursor:none;transition:flex .55s cubic-bezier(.4,0,.2,1),background .3s;
+  overflow:hidden;position:relative;
+}
+.hero-slide:first-child{border-top:none}
+.hero-slide:hover{flex:3;background:var(--bg3)}
+.hs-bg{
+  position:absolute;inset:0;display:flex;align-items:center;
+  justify-content:flex-end;padding-right:1.5rem;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:7rem;color:rgba(255,255,255,.03);
+  pointer-events:none;user-select:none;letter-spacing:.05em;
+  transition:color .4s;
+}
+.hero-slide:hover .hs-bg{color:rgba(200,240,53,.05)}
+.hs-info{position:relative;z-index:1}
+.hs-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:2.2rem;color:rgba(255,255,255,.08);
+  line-height:1;margin-bottom:.25rem;transition:color .3s;
+}
+.hero-slide:hover .hs-num{color:var(--lime)}
+.hs-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.25rem;letter-spacing:.04em;line-height:1;
+}
+.hs-cat{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.1em;color:var(--muted);margin-top:.2rem}
+.hs-arrow{
+  position:absolute;right:2rem;bottom:1.75rem;z-index:1;
+  width:32px;height:32px;border:1px solid var(--line);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity .3s,background .2s;
+}
+.hero-slide:hover .hs-arrow{opacity:1;background:var(--lime);border-color:var(--lime)}
+
+/* ── SERVICES BLOCK ── */
+.services-block{
+  display:grid;grid-template-columns:1fr 1fr;
+  border-bottom:1px solid var(--line);
+}
+.sb-left{
+  padding:5rem 3rem;
+  border-right:1px solid var(--line);
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.sb-left h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3.5rem,6vw,7rem);
+  line-height:.86;margin-top:1rem;
+}
+.sb-left h2 .dim{color:rgba(255,255,255,.18);display:block}
+.sb-left p{
+  font-size:.88rem;line-height:1.8;color:var(--muted);
+  font-weight:300;max-width:300px;margin-bottom:2rem;
+}
+.sb-right{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:0;
+}
+.s-card{
+  padding:2rem 2rem;
+  border-bottom:1px solid var(--line);
+  border-right:1px solid var(--line);
+  cursor:none;transition:background .25s;position:relative;overflow:hidden;
+}
+.s-card:nth-child(even){border-right:none}
+.s-card:nth-last-child(-n+2){border-bottom:none}
+.s-card:hover{background:var(--bg2)}
+.s-card::before{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:0;
+  background:var(--lime);transition:height .3s;
+}
+.s-card:hover::before{height:2px}
+.sc-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:3rem;color:rgba(255,255,255,.05);
+  line-height:1;margin-bottom:.75rem;transition:color .3s;
+}
+.s-card:hover .sc-num{color:rgba(200,240,53,.15)}
+.sc-title{font-size:.92rem;font-weight:500;margin-bottom:.6rem}
+.sc-desc{font-size:.78rem;line-height:1.7;color:var(--muted);font-weight:300}
+
+/* ── WORK PREVIEW ── */
+.work-preview{
+  padding:5rem 3rem;border-bottom:1px solid var(--line);
+}
+.wp-header{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:3rem;
+}
+.wp-header h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2.5rem,4.5vw,5.5rem);
+  line-height:.88;
+}
+.work-rows{display:flex;flex-direction:column}
+.wr-item{
+  display:grid;grid-template-columns:auto 1fr auto;
+  gap:2rem;align-items:center;
+  padding:1.75rem 0;
+  border-bottom:1px solid var(--line);
+  cursor:none;text-decoration:none;color:var(--white);
+  position:relative;overflow:hidden;
+  transition:background .25s;
+}
+.wr-item:last-child{border-bottom:none}
+.wr-item::before{
+  content:'';position:absolute;
+  left:0;top:0;bottom:0;width:0;
+  background:var(--lime);transition:width .35s cubic-bezier(.4,0,.2,1);
+}
+.wr-item:hover::before{width:3px}
+.wr-item:hover{background:rgba(255,255,255,.02)}
+.wr-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.8rem;color:rgba(255,255,255,.08);
+  min-width:3rem;text-align:right;transition:color .3s;
+}
+.wr-item:hover .wr-num{color:var(--lime)}
+.wr-info{}
+.wr-cat{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.14em;color:var(--muted);margin-bottom:.3rem}
+.wr-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.5rem,2.5vw,2.5rem);line-height:1}
+.wr-tags{display:flex;gap:.35rem;margin-top:.5rem;flex-wrap:wrap}
+.wr-tag{
+  font-family:'DM Mono',monospace;
+  font-size:.52rem;letter-spacing:.1em;padding:.2rem .55rem;
+  border:1px solid var(--line);color:var(--muted);
+}
+.wr-meta{
+  display:flex;align-items:center;gap:1.25rem;text-align:right;
+}
+.wr-stat{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--lime)}
+.wr-year{font-family:'DM Mono',monospace;font-size:.6rem;color:var(--muted)}
+
+/* ── TESTIMONIAL ── */
+.testimonial{
+  display:grid;grid-template-columns:1fr 1fr;
+  border-bottom:1px solid var(--line);
+}
+.test-left{
+  padding:5rem 3rem;border-right:1px solid var(--line);
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.test-quote{
+  font-family:'DM Mono',monospace;
+  font-style:italic;
+  font-size:clamp(1.1rem,2vw,1.6rem);
+  line-height:1.6;color:var(--text);
+  border-left:2px solid var(--lime);
+  padding-left:2rem;margin-bottom:2.5rem;
+}
+.test-quote em{color:var(--lime);font-style:normal}
+.test-author{display:flex;align-items:center;gap:1rem}
+.ta-avatar{
+  width:42px;height:42px;border-radius:50%;
+  background:var(--bg3);border:1px solid var(--line2);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Bebas Neue',sans-serif;font-size:.9rem;color:var(--lime);
+}
+.ta-name{font-size:.85rem;font-weight:500}
+.ta-role{font-family:'DM Mono',monospace;font-size:.6rem;color:var(--muted);margin-top:.15rem}
+
+.test-right{
+  padding:5rem 3rem;
+  display:flex;flex-direction:column;justify-content:center;
+  align-items:center;background:var(--bg2);
+  position:relative;overflow:hidden;
+}
+.test-big{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(5rem,12vw,14rem);
+  line-height:1;color:rgba(255,255,255,.04);
+  text-align:center;pointer-events:none;
+}
+.test-rating-badge{
+  position:absolute;
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  padding:1.5rem 2rem;
+  border:1px solid var(--line2);background:var(--bg3);
+}
+.trb-score{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--lime);line-height:1}
+.trb-label{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.14em;color:var(--muted)}
+
+/* ── HOME CTA ── */
+.home-cta{
+  display:grid;grid-template-columns:1fr auto;
+  gap:4rem;align-items:center;
+  padding:6rem 3rem;
+  border-bottom:1px solid var(--line);
+  position:relative;overflow:hidden;
+}
+.hcta-bg{
+  position:absolute;right:0;bottom:0;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:28vw;line-height:.8;
+  color:rgba(255,255,255,.02);pointer-events:none;user-select:none;
+}
+.hcta-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(4rem,8vw,10rem);
+  line-height:.84;position:relative;z-index:1;
+}
+.hcta-title .lime{color:var(--lime)}
+.hcta-sub{
+  font-size:.9rem;line-height:1.75;color:var(--muted);
+  font-weight:300;max-width:380px;margin-top:1.5rem;
+  position:relative;z-index:1;
+}
+.hcta-right{
+  display:flex;flex-direction:column;gap:.75rem;
+  min-width:195px;position:relative;z-index:1;
+}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:4rem 1.25rem 2.5rem;border-right:none;border-bottom:1px solid var(--line)}
+  .hero-right{min-height:60vw}
+  .services-block{grid-template-columns:1fr}
+  .sb-left{padding:3rem 1.25rem;border-right:none;border-bottom:1px solid var(--line)}
+  .sb-right{grid-template-columns:1fr}
+  .work-preview{padding:3rem 1.25rem}
+  .testimonial{grid-template-columns:1fr}
+  .test-left{padding:3rem 1.25rem;border-right:none;border-bottom:1px solid var(--line)}
+  .test-right{padding:3rem 1.25rem;min-height:240px}
+  .home-cta{grid-template-columns:1fr;padding:4rem 1.25rem;gap:2.5rem}
+  .wr-item{grid-template-columns:auto 1fr}
+  .wr-meta{display:none}
+}
+</style>
+</head>
+<body>
+<div class="prog" id="prog"></div>
+<div class="spotlight" id="spotlight"></div>
+<div class="cursor-dot" id="cur"></div>
+<div class="cursor-ring" id="curR"></div>
+
+<header>
+  <a href="index.html" class="logo">APEX<span>.</span></a>
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="services.html">Services</a>
+    <a href="work.html">Work</a>
+    <a href="careers.html">Careers</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="nav-cta">Start a Project ↗</a>
+
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-left-content">
+      <div class="hero-avail reveal">
+        <div class="h-dot"></div>
+        <span class="h-avail-text">Available for new projects — 2025</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="solid reveal d1">We Build</span>
+        <span class="outline reveal d2">Digital</span>
+        <span class="solid reveal d3">Partners.</span>
+      </h1>
+      <p class="hero-sub reveal d3">Full-stack web, AI automation &amp; growth systems for ambitious brands across the Gulf, Egypt, and beyond.</p>
+      <div class="hero-actions reveal d4">
+        <a href="work.html" class="btn-lime">
+          View Our Work
+          <svg width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M0 4h12M9 1l3 3-3 3" stroke="var(--bg)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="services.html" class="btn-ghost">Our Services</a>
+      </div>
+    </div>
+    <div class="hero-left-bottom reveal d4">
+      <div class="hl-stat"><div class="val">12+</div><div class="lbl">Projects</div></div>
+      <div class="hl-stat"><div class="val">5</div><div class="lbl">Countries</div></div>
+      <div class="hl-stat"><div class="val">98%</div><div class="lbl">Retention</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hr-label">Featured Work</div>
+    <div class="hero-slides">
+      <div class="hero-slide">
+        <div class="hs-bg">EC</div>
+        <div class="hs-info">
+          <div class="hs-num">01</div>
+          <div class="hs-name">E-Commerce Platform</div>
+          <div class="hs-cat">Web Development — Saudi Arabia</div>
+        </div>
+        <div class="hs-arrow">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="var(--bg)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <div class="hero-slide">
+        <div class="hs-bg">AI</div>
+        <div class="hs-info">
+          <div class="hs-num">02</div>
+          <div class="hs-name">WhatsApp AI Assistant</div>
+          <div class="hs-cat">AI & Automation — UAE</div>
+        </div>
+        <div class="hs-arrow">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="var(--bg)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <div class="hero-slide">
+        <div class="hs-bg">DS</div>
+        <div class="hs-info">
+          <div class="hs-num">03</div>
+          <div class="hs-name">Campaign Dashboard</div>
+          <div class="hs-cat">Marketing Tech — UAE</div>
+        </div>
+        <div class="hs-arrow">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="var(--bg)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">Web Development</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">AI Automation</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Marketing Systems</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">UI / UX Design</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">WhatsApp Chatbots</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Arabic RTL</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Gulf Region</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Web Development</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">AI Automation</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Marketing Systems</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">UI / UX Design</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">WhatsApp Chatbots</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Arabic RTL</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Gulf Region</span><span class="marquee-item marquee-sep">✦</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services-block">
+  <div class="sb-left">
+    <div>
+      <div class="section-eyebrow reveal">What We Build</div>
+      <h2 class="reveal d1">
+        Four<br>Core<br><span class="dim">Disciplines.</span>
+      </h2>
+    </div>
+    <div>
+      <p class="reveal d2">From the first line of code to the first paying customer — we build the systems that get you there.</p>
+      <a href="services.html" class="arrow-link reveal d3">
+        Explore all services
+        <svg width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M0 4h12M9 1l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="sb-right">
+    <div class="s-card reveal">
+      <div class="sc-num">01</div>
+      <div class="sc-title">Web &amp; App Development</div>
+      <p class="sc-desc">Full-stack in React, Next.js, Node.js &amp; .NET. Fast, scalable, Arabic-first.</p>
+    </div>
+    <div class="s-card reveal d1">
+      <div class="sc-num">02</div>
+      <div class="sc-title">AI &amp; Chatbot Automation</div>
+      <p class="sc-desc">WhatsApp bots and AI automation powered by Gemini &amp; GPT — 24/7 at scale.</p>
+    </div>
+    <div class="s-card reveal d2">
+      <div class="sc-num">03</div>
+      <div class="sc-title">Marketing Systems</div>
+      <p class="sc-desc">Analytics dashboards, campaign automation, and attribution that actually works.</p>
+    </div>
+    <div class="s-card reveal d3">
+      <div class="sc-num">04</div>
+      <div class="sc-title">UI / UX Design</div>
+      <p class="sc-desc">Interfaces that convert — with full Arabic RTL support from day one.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WORK PREVIEW -->
+<section class="work-preview">
+  <div class="wp-header">
+    <div>
+      <div class="section-eyebrow reveal">Selected Work</div>
+      <h2 class="reveal d1">Recent<br>Projects.</h2>
+    </div>
+    <a href="work.html" class="arrow-link reveal d1">
+      View all work
+      <svg width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M0 4h12M9 1l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+  <div class="work-rows">
+    <a href="work.html" class="wr-item reveal">
+      <div class="wr-num">01</div>
+      <div class="wr-info">
+        <div class="wr-cat">Web Development — Saudi Arabia</div>
+        <div class="wr-name">E-Commerce Platform — Al Noor Retail</div>
+        <div class="wr-tags"><span class="wr-tag">Next.js</span><span class="wr-tag">Arabic RTL</span><span class="wr-tag">PostgreSQL</span></div>
+      </div>
+      <div class="wr-meta">
+        <div class="wr-stat">+340%</div>
+        <div class="wr-year">2024</div>
+      </div>
+    </a>
+    <a href="work.html" class="wr-item reveal d1">
+      <div class="wr-num">02</div>
+      <div class="wr-info">
+        <div class="wr-cat">AI & Automation — UAE</div>
+        <div class="wr-name">WhatsApp AI Assistant — Al Masa F&amp;B</div>
+        <div class="wr-tags"><span class="wr-tag">Gemini AI</span><span class="wr-tag">WhatsApp API</span><span class="wr-tag">Node.js</span></div>
+      </div>
+      <div class="wr-meta">
+        <div class="wr-stat">90%</div>
+        <div class="wr-year">2024</div>
+      </div>
+    </a>
+    <a href="work.html" class="wr-item reveal d2">
+      <div class="wr-num">03</div>
+      <div class="wr-info">
+        <div class="wr-cat">Marketing Tech — UAE</div>
+        <div class="wr-name">Campaign Intelligence Dashboard — Vertex</div>
+        <div class="wr-tags"><span class="wr-tag">React</span><span class="wr-tag">D3.js</span><span class="wr-tag">.NET</span></div>
+      </div>
+      <div class="wr-meta">
+        <div class="wr-stat">80%</div>
+        <div class="wr-year">2024</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-band">
+  <div class="stat-cell reveal"><div class="s-val">12+</div><div class="s-lbl">Projects Delivered</div></div>
+  <div class="stat-cell reveal d1"><div class="s-val">5</div><div class="s-lbl">Countries Served</div></div>
+  <div class="stat-cell reveal d2"><div class="s-val">98%</div><div class="s-lbl">Client Retention</div></div>
+  <div class="stat-cell reveal d3"><div class="s-val">3yr</div><div class="s-lbl">Of Excellence</div></div>
+</div>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial">
+  <div class="test-left">
+    <div>
+      <div class="section-eyebrow reveal">Client Voice</div>
+      <blockquote class="test-quote reveal d1">
+        "They didn't just deliver a product — they became a <em>true technical partner</em> who understood our business from day one."
+      </blockquote>
+      <div class="test-author reveal d2">
+        <div class="ta-avatar">AK</div>
+        <div>
+          <div class="ta-name">Ahmed Al-Khalid</div>
+          <div class="ta-role">CEO — Al Noor Retail, Riyadh KSA</div>
+        </div>
+      </div>
+    </div>
+    <a href="about.html" class="arrow-link reveal d3" style="margin-top:2rem">About our approach<svg width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M0 4h12M9 1l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+  <div class="test-right">
+    <div class="test-big">4.9</div>
+    <div class="test-rating-badge">
+      <div class="trb-score">4.9</div>
+      <div class="trb-label">Avg. Client Rating</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="home-cta">
+  <div class="hcta-bg">GO</div>
+  <div class="reveal">
+    <h2 class="hcta-title">Have an<br>Idea?<br><span class="lime">Let's talk.</span></h2>
+    <p class="hcta-sub">We take on a limited number of new projects each month. If you have something ambitious, let's see if we're the right team for it.</p>
+  </div>
+  <div class="hcta-right reveal d2">
+    <a href="contact.html" class="btn-lime">Start a Project<svg width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M0 4h12M9 1l3 3-3 3" stroke="var(--bg)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a href="work.html" class="btn-ghost">See Our Work</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="f-brand">
+      <a href="index.html" class="f-logo">APEX<span>.</span></a>
+      <p>Digital partners for ambitious brands in the Gulf, Egypt &amp; beyond. We build systems that grow.</p>
+    </div>
+    <div class="f-col"><h4>Services</h4><a href="services.html">Web Development</a><a href="services.html">AI &amp; Chatbots</a><a href="services.html">Marketing Systems</a><a href="services.html">UI / UX Design</a></div>
+    <div class="f-col"><h4>Company</h4><a href="about.html">About</a><a href="work.html">Our Work</a><a href="contact.html">Contact</a></div>
+    <div class="f-col"><h4>Contact</h4><a href="mailto:hello@apex.io">hello@apex.io</a><a href="#">+20 100 000 0000</a><a href="#">LinkedIn</a><a href="#">WhatsApp</a></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 APEX Studio — All rights reserved</p><a href="#">Privacy Policy</a></div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>

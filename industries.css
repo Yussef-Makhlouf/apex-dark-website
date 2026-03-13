@@ -1,0 +1,331 @@
+/* ── INDUSTRIES HERO ── */
+.industries-hero {
+  min-height: 80vh;
+  padding: 10rem 3rem 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background: radial-gradient(circle at center 0%, rgba(200, 240, 53, 0.05) 0%, transparent 60%);
+}
+
+.ih-grid-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 60% 80% at 50% 20%, black 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.industries-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+}
+
+.ih-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(4.5rem, 8vw, 9rem);
+  line-height: 0.85;
+  margin-bottom: 2rem;
+  letter-spacing: 0.01em;
+}
+
+.ih-title .outline {
+  display: block;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+  color: transparent;
+}
+
+.ih-title .solid {
+  display: block;
+  color: var(--white);
+}
+
+.ih-sub {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--muted);
+  font-weight: 300;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ── SECTOR GRID ── */
+.sector-grid-section {
+  padding: 8rem 3rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.sector-header {
+  margin-bottom: 5rem;
+  max-width: 800px;
+}
+
+.sector-header h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.5rem, 6vw, 6.5rem);
+  line-height: 0.9;
+}
+
+.sector-header h2 .lime {
+  color: var(--lime);
+}
+
+.sector-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.sector-card {
+  background: var(--bg2);
+  border: 1px solid var(--line);
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, background 0.3s, border-color 0.3s;
+  cursor: none;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sector-card:hover {
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(200, 240, 53, 0.3);
+  transform: translateY(-5px);
+}
+
+.sector-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: var(--lime);
+  transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sector-card:hover::before {
+  height: 3px;
+}
+
+.sc-icon-wrap {
+  width: 60px;
+  height: 60px;
+  border: 1px solid var(--line2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  background: var(--bg3);
+  color: var(--lime);
+  transition: background 0.3s, color 0.3s;
+}
+
+.sector-card:hover .sc-icon-wrap {
+  background: var(--lime);
+  color: var(--bg);
+}
+
+.sc-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.8rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.sc-desc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--muted);
+  font-weight: 300;
+  flex-grow: 1;
+}
+
+.sc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.sc-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--line2);
+  color: var(--muted);
+  background: var(--bg);
+}
+
+/* ── WHY US FOR INDUSTRIES ── */
+.industry-why {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--line);
+}
+
+.iw-image {
+  border-right: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+  background: var(--bg2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
+
+.iw-image-inner {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(8rem, 15vw, 20rem);
+  line-height: 0.8;
+  color: rgba(255, 255, 255, 0.03);
+  text-align: center;
+  pointer-events: none;
+  user-select: none;
+}
+
+.iw-content {
+  padding: 6rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.iw-content h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 0.9;
+  margin-bottom: 3rem;
+}
+
+.iw-features {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.iw-feature {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.iw-feature::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--lime);
+  background: transparent;
+}
+
+.iw-feature h4 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--white);
+}
+
+.iw-feature p {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--muted);
+  font-weight: 300;
+}
+
+/* ── CUSTOM CTA ── */
+.industry-cta {
+  padding: 8rem 3rem;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg2);
+  position: relative;
+  overflow: hidden;
+}
+
+.icta-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(10rem, 20vw, 30rem);
+  line-height: 0.8;
+  color: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  z-index: 0;
+  white-space: nowrap;
+}
+
+.icta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.icta-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  line-height: 0.9;
+  margin-bottom: 1.5rem;
+}
+
+.icta-desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--muted);
+  font-weight: 300;
+  margin-bottom: 3rem;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .sector-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .industries-hero {
+    padding: 8rem 1.25rem 4rem;
+  }
+  .sector-grid-section {
+    padding: 4rem 1.25rem;
+  }
+  .sector-card {
+    padding: 2rem;
+    min-height: auto;
+  }
+  .industry-why {
+    grid-template-columns: 1fr;
+  }
+  .iw-image {
+    min-height: 300px;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .iw-content {
+    padding: 4rem 1.25rem;
+  }
+  .industry-cta {
+    padding: 5rem 1.25rem;
+  }
+}

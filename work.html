@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work — APEX Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<link rel="stylesheet" href="work.css">
+</head>
+<body>
+
+<div class="prog" id="prog"></div>
+<div class="spotlight" id="spotlight"></div>
+<div class="cursor-dot" id="cur"></div>
+<div class="cursor-ring" id="curR"></div>
+
+<header>
+  <a href="index.html" class="logo">APEX<span>.</span></a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="work.html" class="active">Work</a>
+    <a href="careers.html">Careers</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="nav-cta">Start a Project ↗</a>
+  </nav>
+</header>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <a class="sb-item active" href="#proj-01" data-target="proj-01">
+    <div class="sb-line"></div>
+    <span class="sb-num">01</span>
+  </a>
+  <a class="sb-item" href="#proj-02" data-target="proj-02">
+    <div class="sb-line"></div>
+    <span class="sb-num">02</span>
+  </a>
+  <a class="sb-item" href="#proj-03" data-target="proj-03">
+    <div class="sb-line"></div>
+    <span class="sb-num">03</span>
+  </a>
+  <a class="sb-item" href="#proj-04" data-target="proj-04">
+    <div class="sb-line"></div>
+    <span class="sb-num">04</span>
+  </a>
+  <a class="sb-item" href="#proj-05" data-target="proj-05">
+    <div class="sb-line"></div>
+    <span class="sb-num">05</span>
+  </a>
+</aside>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-index">Selected Work — 2022 / 2025</div>
+  <div class="hero-content">
+    <div class="hero-eyebrow reveal">The Archive</div>
+    <h1 class="hero-title">
+      <span class="outline reveal d1">Selected</span>
+      <span class="solid reveal d2">Work.</span>
+    </h1>
+    <div class="hero-bottom">
+      <p class="hero-desc reveal d3">
+        A curated selection of the projects we're proud of — digital systems built for businesses that refuse to settle.
+      </p>
+      <div class="hero-count reveal d3">
+        <span class="big">05</span>
+        <span class="lbl">Projects<br>Featured</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER -->
+<div class="filter-section">
+  <span class="f-label">Filter</span>
+  <button class="f-btn active" data-f="all">All</button>
+  <button class="f-btn" data-f="web">Web Dev</button>
+  <button class="f-btn" data-f="ai">AI & Chatbot</button>
+  <button class="f-btn" data-f="marketing">Marketing</button>
+  <button class="f-btn" data-f="design">Design</button>
+  <span class="f-count" id="fCount">05 / 05 projects</span>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PROJECTS — 5 layouts, each totally different
+════════════════════════════════════════════ -->
+<div class="projects-list">
+
+  <!-- PROJECT 01 — Layout A: two column -->
+  <div class="proj-row layout-a reveal" id="proj-01" data-cat="web" onclick="openOverlay('proj-01')">
+    <div class="pra-left">
+      <div>
+        <div class="proj-cat">Web Development</div>
+        <h2 class="proj-name-large">E-Commerce<br>Platform</h2>
+        <div class="proj-client">Al Noor Retail — Riyadh, Saudi Arabia</div>
+      </div>
+      <div class="proj-tags">
+        <span class="ptag">Next.js</span>
+        <span class="ptag">Node.js</span>
+        <span class="ptag">PostgreSQL</span>
+        <span class="ptag">Arabic RTL</span>
+        <span class="ptag">AWS</span>
+      </div>
+      <div class="proj-num">01</div>
+    </div>
+    <div class="pra-right">
+      <div>
+        <p class="proj-desc">Full-stack Arabic-first e-commerce solution built for scale. A flagship retail platform serving 50K+ monthly users with sub-1.5s load times across mobile and desktop.</p>
+      </div>
+      <div class="proj-metrics">
+        <div class="pm-item">
+          <div class="pm-val">+340%</div>
+          <div class="pm-lbl">Revenue</div>
+        </div>
+        <div class="pm-item">
+          <div class="pm-val">50K</div>
+          <div class="pm-lbl">Users/Mo</div>
+        </div>
+        <div class="pm-item">
+          <div class="pm-val">1.2s</div>
+          <div class="pm-lbl">Load Time</div>
+        </div>
+      </div>
+      <a href="#" class="proj-view" onclick="event.stopPropagation()">
+        View case study
+        <svg width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M0 4h12M9 1l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- PROJECT 02 — Layout C: oversized scrolling title -->
+  <div class="proj-row layout-c reveal d1" id="proj-02" data-cat="ai" onclick="openOverlay('proj-02')">
+    <div class="prc-inner">
+      <div class="prc-tag">AI & Automation<br>UAE · 2024</div>
+      <div class="prc-title-wrap">
+        <div class="prc-title">WhatsApp AI Assistant</div>
+      </div>
+      <div class="prc-meta">
+        <div class="prc-year">2024</div>
+        <div class="prc-arrow">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M3 11L11 3M11 3H5M11 3v6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="proj-num">02</div>
+  </div>
+
+  <!-- PROJECT 03 — Layout B: horizontal strip with visual -->
+  <div class="proj-row layout-b reveal d2" id="proj-03" data-cat="marketing" onclick="openOverlay('proj-03')">
+    <div class="prb-num"><span>03</span></div>
+    <div class="prb-main">
+      <div>
+        <div class="proj-cat">Marketing Technology</div>
+        <h2 class="proj-name-large" style="font-size:clamp(2rem,3.5vw,4rem)">Campaign Intelligence<br>Dashboard</h2>
+        <div class="proj-client" style="margin-top:.5rem">Vertex Agency — Dubai, UAE</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1.5rem">
+        <div class="proj-tags">
+          <span class="ptag">React</span>
+          <span class="ptag">D3.js</span>
+          <span class="ptag">.NET API</span>
+          <span class="ptag">SQL Server</span>
+        </div>
+        <div class="proj-metrics" style="gap:1.75rem">
+          <div class="pm-item">
+            <div class="pm-val">6</div>
+            <div class="pm-lbl">Platforms</div>
+          </div>
+          <div class="pm-item">
+            <div class="pm-val">80%</div>
+            <div class="pm-lbl">Time Saved</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="prb-visual">
+      <div class="prb-visual-text">DS</div>
+      <div class="prb-visual-tag">Marketing Tech</div>
+    </div>
+    <div class="proj-num">03</div>
+  </div>
+
+  <!-- PROJECT 04 — Layout A reversed -->
+  <div class="proj-row layout-a reveal d1" id="proj-04" data-cat="design" onclick="openOverlay('proj-04')" style="direction:ltr">
+    <div class="pra-left" style="order:2;border-right:none;border-left:1px solid var(--line);padding-left:3rem;padding-right:0">
+      <div>
+        <div class="proj-cat">UI / UX Design</div>
+        <h2 class="proj-name-large">Mobile Banking<br>Redesign</h2>
+        <div class="proj-client">TasdiqPay — Cairo, Egypt</div>
+      </div>
+      <div class="proj-tags">
+        <span class="ptag">Figma</span>
+        <span class="ptag">React Native</span>
+        <span class="ptag">User Research</span>
+        <span class="ptag">Arabic RTL</span>
+      </div>
+      <div class="proj-num">04</div>
+    </div>
+    <div class="pra-right" style="order:1">
+      <div>
+        <p class="proj-desc">End-to-end UX overhaul of a mobile banking app serving 200K+ Egyptian users. Simplified complex financial flows with bilingual Arabic/English design systems.</p>
+      </div>
+      <div class="proj-metrics">
+        <div class="pm-item">
+          <div class="pm-val">200K</div>
+          <div class="pm-lbl">Users</div>
+        </div>
+        <div class="pm-item">
+          <div class="pm-val">+58%</div>
+          <div class="pm-lbl">Completion</div>
+        </div>
+        <div class="pm-item">
+          <div class="pm-val">−40%</div>
+          <div class="pm-lbl">Drop-off</div>
+        </div>
+      </div>
+      <a href="#" class="proj-view" onclick="event.stopPropagation()">
+        View case study
+        <svg width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M0 4h12M9 1l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- PROJECT 05 — Layout C again: different treatment -->
+  <div class="proj-row layout-c reveal d2" id="proj-05" data-cat="web" onclick="openOverlay('proj-05')">
+    <div class="prc-inner">
+      <div class="prc-tag">Web Development<br>Kuwait · 2025</div>
+      <div class="prc-title-wrap">
+        <div class="prc-title">Real Estate Portal</div>
+      </div>
+      <div class="prc-meta">
+        <div class="prc-year">2025</div>
+        <div class="prc-arrow">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M3 11L11 3M11 3H5M11 3v6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="proj-num">05</div>
+  </div>
+
+</div><!-- /projects-list -->
+
+<!-- STATS -->
+<div class="stats-band">
+  <div class="stat-cell reveal">
+    <div class="s-val">12+</div>
+    <div class="s-lbl">Projects Delivered</div>
+  </div>
+  <div class="stat-cell reveal d1">
+    <div class="s-val">5</div>
+    <div class="s-lbl">Countries Served</div>
+  </div>
+  <div class="stat-cell reveal d2">
+    <div class="s-val">98%</div>
+    <div class="s-lbl">Client Retention</div>
+  </div>
+  <div class="stat-cell reveal d3">
+    <div class="s-val">3yr</div>
+    <div class="s-lbl">Of Excellence</div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="page-cta">
+  <div class="cta-grid-bg"></div>
+  <div class="cta-content reveal">
+    <h2 class="cta-title">
+      Next<br>could be<br><span class="lime">yours.</span>
+    </h2>
+    <p class="cta-sub">We're selective about the projects we take on. If you have something ambitious in mind, let's find out if we're the right team for it.</p>
+  </div>
+  <div class="cta-actions reveal d2">
+    <a href="contact.html" class="btn-lime">
+      Start a Project
+      <svg width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M0 4h12M9 1l3 3-3 3" stroke="var(--bg)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="about.html" class="btn-ghost">About Us</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="index.html" class="f-logo">APEX<span>.</span></a>
+  <div class="f-links">
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="#">LinkedIn</a>
+  </div>
+  <div class="f-copy">© 2025 APEX Studio</div>
+</footer>
+
+<!-- ═══════ OVERLAY ═══════ -->
+<div class="overlay-backdrop" id="overlayBg" onclick="closeOverlay()"></div>
+<div class="overlay-panel" id="overlayPanel">
+  <div class="overlay-header">
+    <span class="ov-tag" id="ovTag">—</span>
+    <button class="overlay-close" onclick="closeOverlay()">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <div class="overlay-body" id="overlayBody"></div>
+</div>
+
+<script>
+// ── CURSOR + SPOTLIGHT
+const cur=document.getElementById('cur');
+const curR=document.getElementById('curR');
+const spl=document.getElementById('spotlight');
+let mx=0,my=0,rx=0,ry=0,splShown=false;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX;my=e.clientY;
+  cur.style.left=mx+'px';cur.style.top=my+'px';
+  spl.style.left=mx+'px';spl.style.top=my+'px';
+  if(!splShown){spl.style.opacity='1';splShown=true}
+});
+function lerp(){
+  rx+=(mx-rx)*.12;ry+=(my-ry)*.12;
+  curR.style.left=rx+'px';curR.style.top=ry+'px';
+  requestAnimationFrame(lerp);
+}
+lerp();
+
+// ── PROGRESS
+const prog=document.getElementById('prog');
+window.addEventListener('scroll',()=>{
+  const pct=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*100;
+  prog.style.width=Math.min(pct,100)+'%';
+},{passive:true});
+
+// ── REVEAL
+const revEls=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver(e=>{
+  e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('in')});
+},{threshold:0.08,rootMargin:'0px 0px -20px 0px'});
+revEls.forEach(el=>io.observe(el));
+
+// ── SIDEBAR
+const rows=document.querySelectorAll('.proj-row[id]');
+const sbItems=document.querySelectorAll('.sb-item');
+const rowIo=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const id=e.target.id;
+      sbItems.forEach(s=>s.classList.toggle('active',s.dataset.target===id));
+    }
+  });
+},{threshold:0.4});
+rows.forEach(r=>rowIo.observe(r));
+
+// ── FILTER
+const fBtns=document.querySelectorAll('.f-btn');
+const projRows=document.querySelectorAll('.proj-row[data-cat]');
+const fCount=document.getElementById('fCount');
+fBtns.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    fBtns.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.f;
+    let vis=0;
+    projRows.forEach(r=>{
+      const show=f==='all'||r.dataset.cat===f;
+      r.classList.toggle('hidden',!show);
+      if(show)vis++;
+    });
+    fCount.textContent=vis+' / '+projRows.length+' projects';
+  });
+});
+
+// ── OVERLAY DATA
+const projects={
+  'proj-01':{
+    tag:'Web Development — Saudi Arabia',
+    title:'E-Commerce Platform',
+    client:'Al Noor Retail — Riyadh, KSA — 2024',
+    desc:'Full-stack Arabic-first e-commerce solution for a leading Gulf retail brand. Built from the ground up to handle high traffic, bilingual RTL/LTR switching, and complex inventory management — all on a 1.2s load time.',
+    m1:'+340%',l1:'Revenue Growth',
+    m2:'50K',l2:'Users/Month',
+    m3:'1.2s',l3:'Load Time',
+    challenge:'The client was running on a legacy PHP platform that crashed weekly. They needed zero-downtime migration to a modern stack without losing SEO rankings or transaction history.',
+    tags:['Next.js','Node.js','PostgreSQL','Arabic RTL','AWS','Stripe','Redis'],
+    visual:'EC'
+  },
+  'proj-02':{
+    tag:'AI & Automation — UAE',
+    title:'WhatsApp AI Assistant',
+    client:'Al Masa F&B — Dubai, UAE — 2024',
+    desc:'Intelligent bilingual chatbot for a UAE restaurant chain handling reservations, orders, and customer support in Arabic & English — fully automated, around the clock, with no human intervention required for 90% of queries.',
+    m1:'90%',l1:'Automated',
+    m2:'2K',l2:'Daily Chats',
+    m3:'4.8★',l3:'Rating',
+    challenge:'Peak hours flooded the team with duplicate reservation requests in Arabic and English. The bot now handles ambiguous messages, dialect variations, and multi-step booking flows autonomously.',
+    tags:['WhatsApp Cloud API','Google Gemini','Node.js','PostgreSQL','Arabic NLP','Webhooks'],
+    visual:'AI'
+  },
+  'proj-03':{
+    tag:'Marketing Technology — UAE',
+    title:'Campaign Intelligence Dashboard',
+    client:'Vertex Agency — Dubai, UAE — 2024',
+    desc:'Unified analytics hub aggregating real-time data from 6 ad platforms into a single dashboard. Replaced 4 separate BI tools with one React application, cutting reporting time from 4 hours to 20 minutes daily.',
+    m1:'6',l1:'Platforms Unified',
+    m2:'80%',l2:'Time Saved',
+    m3:'12M',l3:'Events/Day',
+    challenge:'Marketing analysts were copy-pasting data between Meta, Google, TikTok, and LinkedIn dashboards every morning. Manual errors were costing the agency reporting credibility with clients.',
+    tags:['React','D3.js','.NET API','SQL Server','Meta Ads','Google Ads','TikTok API'],
+    visual:'DS'
+  },
+  'proj-04':{
+    tag:'UI / UX Design — Egypt',
+    title:'Mobile Banking Redesign',
+    client:'TasdiqPay — Cairo, Egypt — 2023',
+    desc:'End-to-end UX overhaul of a mobile banking app serving 200K+ Egyptian users. Simplified complex financial flows, redesigned the entire component library in both Arabic RTL and English LTR, and implemented a design system handoff to the internal dev team.',
+    m1:'+58%',l1:'Task Completion',
+    m2:'−40%',l2:'Drop-off Rate',
+    m3:'200K',l3:'Active Users',
+    challenge:'The existing app had 7 different button styles, no design system, and Arabic text hardcoded as images. Users abandoned 60% of transactions at the confirmation screen.',
+    tags:['Figma','React Native','User Research','Prototyping','Design System','Arabic RTL','Accessibility'],
+    visual:'UX'
+  },
+  'proj-05':{
+    tag:'Web Development — Kuwait',
+    title:'Real Estate Portal',
+    client:'Wafrah Properties — Kuwait City — 2025',
+    desc:'Bilingual Arabic/English real estate search platform with advanced filters, map integration, and a lead management system. Built to handle 10,000+ property listings with sub-second search results using PostgreSQL full-text search.',
+    m1:'10K+',l1:'Listings',
+    m2:'<1s',l2:'Search Speed',
+    m3:'3x',l3:'Lead Growth',
+    challenge:'The previous site was a WordPress template with broken Arabic support. Search was non-functional, maps used Google Maps with no caching, and mobile experience was unusable for right-to-left users.',
+    tags:['Next.js','PostgreSQL','Mapbox','Node.js','Arabic RTL','Redis','Cloudinary'],
+    visual:'RE'
+  }
+};
+
+function openOverlay(id){
+  const p=projects[id];
+  if(!p)return;
+  document.getElementById('ovTag').textContent=p.tag;
+  document.getElementById('overlayBody').innerHTML=`
+    <div class="ov-hero-visual">
+      <div class="ov-visual-bg">${p.visual}</div>
+      <div class="ov-visual-frame">
+        <div class="ov-frame-bar">
+          <div class="ov-dot"></div><div class="ov-dot"></div><div class="ov-dot"></div>
+        </div>
+      </div>
+    </div>
+    <h2 class="ov-title">${p.title}</h2>
+    <div class="ov-client">${p.client}</div>
+    <p class="ov-desc">${p.desc}</p>
+    <div class="ov-metrics">
+      <div class="ov-metric"><div class="ov-m-val">${p.m1}</div><div class="ov-m-lbl">${p.l1}</div></div>
+      <div class="ov-metric"><div class="ov-m-val">${p.m2}</div><div class="ov-m-lbl">${p.l2}</div></div>
+      <div class="ov-metric"><div class="ov-m-val">${p.m3}</div><div class="ov-m-lbl">${p.l3}</div></div>
+    </div>
+    <div class="ov-section-title">The Challenge</div>
+    <div class="ov-challenge"><p>${p.challenge}</p></div>
+    <div class="ov-section-title">Tech Stack</div>
+    <div class="ov-tags">${p.tags.map(t=>`<span class="ov-tag-item">${t}</span>`).join('')}</div>
+    <a href="contact.html" class="ov-cta">
+      Build something similar
+      <svg width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M0 4h12M9 1l3 3-3 3" stroke="var(--bg)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  `;
+  document.getElementById('overlayBg').classList.add('open');
+  document.getElementById('overlayPanel').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeOverlay(){
+  document.getElementById('overlayBg').classList.remove('open');
+  document.getElementById('overlayPanel').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeOverlay()});
+</script>
+</body>
+</html>

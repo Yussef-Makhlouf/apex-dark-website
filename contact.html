@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — APEX Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<link rel="stylesheet" href="contact.css">
+</head>
+<body>
+<div class="prog" id="prog"></div>
+<div class="spotlight" id="spotlight"></div>
+<div class="cursor-dot" id="cur"></div>
+<div class="cursor-ring" id="curR"></div>
+
+<header>
+  <a href="index.html" class="logo">APEX<span>.</span></a>
+  <nav>
+    <a href="index.html">Home</a><a href="services.html">Services</a>
+    <a href="work.html">Work</a><a href="about.html">About</a>
+    <a href="contact.html" class="active nav-cta">Contact ↗</a>
+    <a href="careers.html">Careers</a>
+  </nav>
+</header>
+
+<div class="contact-wrap">
+  <!-- LEFT -->
+  <div class="ct-left">
+    <div class="ct-grid"></div>
+    <div class="ct-left-content">
+      <div class="eyebrow reveal" style="position:relative;z-index:1">Let's Connect</div>
+      <h1 class="ct-title">
+        <span class="outline reveal d1">Start A</span>
+        <span class="lime reveal d2">Project.</span>
+      </h1>
+      <p class="ct-sub reveal d3">We respond to all serious inquiries within 24 hours. Tell us about your project and let's see if we're a good fit.</p>
+    </div>
+    <div>
+      <div class="ct-info reveal d2">
+        <div class="ci-block">
+          <div class="ci-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 3l6 5 6-5M1 3h12v9H1z" stroke="rgba(255,255,255,.3)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="ci-label">Email</div><a href="mailto:hello@apex.io" class="ci-val">hello@apex.io</a></div>
+        </div>
+        <div class="ci-block">
+          <div class="ci-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 1h3l1.5 3.5-2 1a9 9 0 003 3l1-2L12 8v3a1.5 1.5 0 01-1.5 1.5C4 12.5 1 6 1 2.5A1.5 1.5 0 012 1z" stroke="rgba(255,255,255,.3)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="ci-label">WhatsApp</div><a href="#" class="ci-val">+20 100 000 0000</a></div>
+        </div>
+        <div class="ci-block">
+          <div class="ci-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="6" r="2.5" stroke="rgba(255,255,255,.3)" stroke-width="1.1"/><path d="M7 1a5 5 0 010 10C4 11 1.5 9 1.5 6.5A5.5 5.5 0 017 1" stroke="rgba(255,255,255,.3)" stroke-width="1.1" stroke-linecap="round"/></svg></div>
+          <div><div class="ci-label">Based In</div><span class="ci-val" style="cursor:default">Egypt — Serving Gulf &amp; MENA</span></div>
+        </div>
+      </div>
+      <div class="avail-strip reveal d3">
+        <div class="a-dot"></div>
+        <div class="a-text"><strong>Available for new projects</strong> — Currently booking Q2 2025</div>
+      </div>
+      <div class="ct-socials reveal d3">
+        <a href="#" class="soc-link">LinkedIn</a>
+        <a href="#" class="soc-link">GitHub</a>
+        <a href="#" class="soc-link">Behance</a>
+        <a href="#" class="soc-link">X / Twitter</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT FORM -->
+  <div class="ct-right">
+    <div class="form-head reveal">
+      <h2>Tell Us About<br>Your Project</h2>
+      <p>Fill in the form and we'll respond within one business day with a proposal or a quick call offer.</p>
+    </div>
+    <form id="cForm" class="reveal d1">
+      <div class="form-row">
+        <div class="fg"><input type="text" id="nm" placeholder="x" autocomplete="name"><label for="nm">Full Name</label></div>
+        <div class="fg"><input type="text" id="co" placeholder="x"><label for="co">Company / Brand</label></div>
+      </div>
+      <div class="form-row">
+        <div class="fg"><input type="email" id="em" placeholder="x"><label for="em">Email Address</label></div>
+        <div class="fg"><input type="text" id="ph" placeholder="x"><label for="ph">WhatsApp / Phone</label></div>
+      </div>
+      <div class="service-checks">
+        <span class="sel-label">Service Needed</span>
+        <div class="sc-grid">
+          <div class="sc-item"><input type="checkbox" id="s1"><label for="s1">Web Development</label></div>
+          <div class="sc-item"><input type="checkbox" id="s2"><label for="s2">AI &amp; Chatbot</label></div>
+          <div class="sc-item"><input type="checkbox" id="s3"><label for="s3">Marketing System</label></div>
+          <div class="sc-item"><input type="checkbox" id="s4"><label for="s4">UI / UX Design</label></div>
+        </div>
+      </div>
+      <div class="fg">
+        <select id="bud">
+          <option value="">—</option>
+          <option>Under $2,000</option>
+          <option>$2,000 – $5,000</option>
+          <option>$5,000 – $15,000</option>
+          <option>$15,000+</option>
+          <option>Let's discuss</option>
+        </select>
+        <label for="bud" style="top:.85rem;transform:none;font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)">Estimated Budget</label>
+      </div>
+      <div class="fg"><textarea id="msg" placeholder="x"></textarea><label for="msg">Project Brief</label></div>
+      <div class="form-submit">
+        <p class="fn">We'll review your request and respond with a proposal or quick call — your choice.</p>
+        <button type="submit" class="sub-btn">
+          Send Message
+          <svg width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M0 4h12M9 1l3 3-3 3" stroke="var(--bg)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </form>
+    <div class="form-success" id="fSuccess">
+      <div class="success-icon">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M4 13l6 6L22 7" stroke="var(--bg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3>Message Sent!</h3>
+      <p>Thank you. We'll be in touch within 24 hours to discuss your project.</p>
+    </div>
+  </div>
+</div>
+
+<div class="contact-bottom">
+  <div class="cb-cell reveal">
+    <div class="cbc-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="var(--muted)" stroke-width="1.1"/><path d="M8 5v3.5l2.5 1.5" stroke="var(--muted)" stroke-width="1.1" stroke-linecap="round"/></svg></div>
+    <div class="cbc-title">24hr Response</div>
+    <p class="cbc-desc">All serious project inquiries receive a response within one business day. No waiting weeks for a quote.</p>
+  </div>
+  <div class="cb-cell reveal d1">
+    <div class="cbc-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1.5" y="3" width="13" height="10" rx="1.5" stroke="var(--muted)" stroke-width="1.1"/><path d="M1.5 7h13" stroke="var(--muted)" stroke-width="1.1"/></svg></div>
+    <div class="cbc-title">Free Discovery Call</div>
+    <p class="cbc-desc">Every project starts with a free 30-min call to understand your goals before any commitment.</p>
+  </div>
+  <div class="cb-cell reveal d2">
+    <div class="cbc-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5l2 4h4l-3.5 2.5 1.5 4.5-4-2.5-4 2.5 1.5-4.5L2 5.5h4z" stroke="var(--muted)" stroke-width="1.1" stroke-linejoin="round"/></svg></div>
+    <div class="cbc-title">No Lock-in</div>
+    <p class="cbc-desc">Month-to-month retainers, transparent pricing, your code, your data. Earn your business every sprint.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="f-brand"><a href="index.html" class="f-logo">APEX<span>.</span></a><p>Digital partners for ambitious brands in the Gulf, Egypt &amp; beyond.</p></div>
+    <div class="f-col"><h4>Services</h4><a href="services.html">Web Development</a><a href="services.html">AI &amp; Chatbots</a><a href="services.html">Marketing Systems</a><a href="services.html">UI / UX Design</a></div>
+    <div class="f-col"><h4>Company</h4><a href="about.html">About</a><a href="work.html">Our Work</a><a href="contact.html">Contact</a></div>
+    <div class="f-col"><h4>Contact</h4><a href="mailto:hello@apex.io">hello@apex.io</a><a href="#">+20 100 000 0000</a><a href="#">LinkedIn</a><a href="#">WhatsApp</a></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 APEX Studio — All rights reserved</p><a href="#">Privacy Policy</a></div>
+</footer>
+
+<script src="shared.js"></script>
+<script>
+document.getElementById('cForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  this.style.display='none';
+  document.getElementById('fSuccess').classList.add('show');
+});
+</script>
+</body>
+</html>

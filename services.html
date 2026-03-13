@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — APEX Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<link rel="stylesheet" href="services.css">
+</head>
+<body>
+<div class="prog" id="prog"></div>
+<div class="spotlight" id="spotlight"></div>
+<div class="cursor-dot" id="cur"></div>
+<div class="cursor-ring" id="curR"></div>
+
+<header>
+  <a href="index.html" class="logo">APEX<span>.</span></a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="work.html">Work</a>
+    <a href="careers.html">Careers</a>    
+    <a href="about.html">About</a>
+    <a href="contact.html" class="nav-cta">Start a Project ↗</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-wm">SV</div>
+  <div class="eyebrow reveal" style="position:relative;z-index:1">What We Offer</div>
+  <h1 class="reveal d1" style="position:relative;z-index:1">
+    <span class="outline">Services That</span>
+    Actually Deliver.
+  </h1>
+  <p class="page-hero-desc reveal d2">Four disciplines. One team. Everything you need to build, automate, and grow a digital business across the Gulf and MENA region.</p>
+</section>
+
+<!-- ACCORDION -->
+<div class="services-acc">
+  <div class="acc-item open">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-num">01</div>
+      <div class="acc-title-wrap">
+        <div class="acc-tag">Full-Stack Engineering</div>
+        <div class="acc-title">Web &amp; App Development</div>
+      </div>
+      <div class="acc-toggle"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+    </div>
+    <div class="acc-body">
+      <div class="acc-inner">
+        <div class="acc-spacer"></div>
+        <div>
+          <p class="acc-desc">We build production-grade web applications and platforms that scale. From landing pages to complex SaaS products — every line written for performance, maintainability, and real results. Arabic-first RTL is standard, never an afterthought.</p>
+          <div class="acc-stack">
+            <span class="tech-tag">React / Next.js</span><span class="tech-tag">Node.js</span>
+            <span class="tech-tag">.NET</span><span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">Vercel</span><span class="tech-tag">AWS</span><span class="tech-tag">Arabic RTL</span>
+          </div>
+        </div>
+        <div class="acc-deliverables">
+          <h4>Deliverables</h4>
+          <ul class="del-list">
+            <li>Custom web applications & platforms</li>
+            <li>E-commerce & marketplace solutions</li>
+            <li>CMS & admin dashboards</li>
+            <li>API design & third-party integrations</li>
+            <li>Performance optimization & audits</li>
+            <li>Arabic / bilingual RTL interfaces</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="acc-item">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-num">02</div>
+      <div class="acc-title-wrap">
+        <div class="acc-tag">Intelligent Automation</div>
+        <div class="acc-title">AI &amp; Chatbot Systems</div>
+      </div>
+      <div class="acc-toggle"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+    </div>
+    <div class="acc-body">
+      <div class="acc-inner">
+        <div class="acc-spacer"></div>
+        <div>
+          <p class="acc-desc">AI assistants and automation that replace repetitive work. Our WhatsApp AI chatbots handle support, bookings, and sales in Arabic &amp; English — 24/7, without adding headcount.</p>
+          <div class="acc-stack">
+            <span class="tech-tag">WhatsApp Cloud API</span><span class="tech-tag">Google Gemini</span>
+            <span class="tech-tag">OpenAI GPT</span><span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Webhooks</span><span class="tech-tag">Arabic NLP</span>
+          </div>
+        </div>
+        <div class="acc-deliverables">
+          <h4>Deliverables</h4>
+          <ul class="del-list">
+            <li>WhatsApp AI customer support bots</li>
+            <li>Booking & reservation automation</li>
+            <li>Lead qualification chatbots</li>
+            <li>Admin dashboard & conversation logs</li>
+            <li>Arabic + English bilingual AI</li>
+            <li>CRM & ERP integrations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="acc-item">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-num">03</div>
+      <div class="acc-title-wrap">
+        <div class="acc-tag">Data &amp; Growth</div>
+        <div class="acc-title">Marketing Systems</div>
+      </div>
+      <div class="acc-toggle"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+    </div>
+    <div class="acc-body">
+      <div class="acc-inner">
+        <div class="acc-spacer"></div>
+        <div>
+          <p class="acc-desc">Analytics infrastructure that gives marketing teams a real edge. We unify your data, automate reporting, and build tools that make decisions obvious — not guesswork.</p>
+          <div class="acc-stack">
+            <span class="tech-tag">React Dashboards</span><span class="tech-tag">Meta Ads API</span>
+            <span class="tech-tag">Google Analytics</span><span class="tech-tag">.NET API</span>
+            <span class="tech-tag">SQL Server</span><span class="tech-tag">D3.js</span>
+          </div>
+        </div>
+        <div class="acc-deliverables">
+          <h4>Deliverables</h4>
+          <ul class="del-list">
+            <li>Real-time analytics dashboards</li>
+            <li>Multi-platform ad data aggregation</li>
+            <li>Automated reporting & alerts</li>
+            <li>A/B testing infrastructure</li>
+            <li>Attribution modelling</li>
+            <li>Data pipeline & warehouse setup</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="acc-item">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-num">04</div>
+      <div class="acc-title-wrap">
+        <div class="acc-tag">Interface Design</div>
+        <div class="acc-title">UI / UX Design</div>
+      </div>
+      <div class="acc-toggle"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+    </div>
+    <div class="acc-body">
+      <div class="acc-inner">
+        <div class="acc-spacer"></div>
+        <div>
+          <p class="acc-desc">Interfaces users enjoy using. We design Arabic-first — RTL layouts, bilingual components, cultural context from day one. Every design ships with a developer-ready specification.</p>
+          <div class="acc-stack">
+            <span class="tech-tag">Figma</span><span class="tech-tag">Prototyping</span>
+            <span class="tech-tag">User Research</span><span class="tech-tag">Design Systems</span>
+            <span class="tech-tag">Arabic RTL</span><span class="tech-tag">Accessibility</span>
+          </div>
+        </div>
+        <div class="acc-deliverables">
+          <h4>Deliverables</h4>
+          <ul class="del-list">
+            <li>UX research & user flows</li>
+            <li>Wireframes & interactive prototypes</li>
+            <li>Pixel-perfect Figma designs</li>
+            <li>Arabic + English design systems</li>
+            <li>Mobile-first responsive layouts</li>
+            <li>Developer handoff documentation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<div class="process-section">
+  <div class="ps-left">
+    <div>
+      <div class="section-eyebrow reveal">How We Work</div>
+      <h2 class="reveal d1">Our<br><span class="dim">Process.</span></h2>
+    </div>
+    <div class="reveal d2">
+      <p class="ps-quote">"Great software is invisible — it just works, in any language, on any device, for any user."</p>
+      <a href="contact.html" class="arrow-link">Start a conversation<svg width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M0 4h12M9 1l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+  <div class="ps-right">
+    <div class="process-step reveal">
+      <div class="ps-num-wrap"><div class="ps-num">01</div></div>
+      <div><div class="ps-title">Discovery &amp; Scoping</div><p class="ps-desc">We dig into your business, users, and goals. Hard questions, documented requirements, clear success metrics — before a single line of code.</p></div>
+    </div>
+    <div class="process-step reveal d1">
+      <div class="ps-num-wrap"><div class="ps-num">02</div></div>
+      <div><div class="ps-title">Design &amp; Architecture</div><p class="ps-desc">Technical architecture, API contracts, and UI wireframes aligned before development begins. No surprises halfway through.</p></div>
+    </div>
+    <div class="process-step reveal d2">
+      <div class="ps-num-wrap"><div class="ps-num">03</div></div>
+      <div><div class="ps-title">Build &amp; Iterate</div><p class="ps-desc">Agile sprints with weekly demos. You see progress every week, not just a reveal at the end. Tight, continuous feedback loops.</p></div>
+    </div>
+    <div class="process-step reveal d3">
+      <div class="ps-num-wrap"><div class="ps-num">04</div></div>
+      <div><div class="ps-title">Launch &amp; Scale</div><p class="ps-desc">We handle deployment, monitoring, and handoff. Post-launch support included in every project. We don't disappear after go-live.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<section class="pricing-section">
+  <div class="section-eyebrow reveal">Transparent Pricing</div>
+  <h2 class="reveal d1" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,5vw,5.5rem);line-height:.88;margin-top:1rem">Simple,<br>Clear Packages.</h2>
+  <div class="pricing-grid">
+    <div class="price-card reveal">
+      <div class="pc-tier">Starter</div>
+      <div class="pc-name">Launchpad</div>
+      <div class="pc-price">$2K<span> / project</span></div>
+      <p class="pc-desc">Perfect for MVPs, landing pages, and simple automation tools.</p>
+      <div class="pc-divider"></div>
+      <ul class="pc-features">
+        <li>Up to 5 pages or features</li><li>Mobile-first responsive</li>
+        <li>Arabic RTL support</li><li>2 rounds of revisions</li><li>30-day post-launch support</li>
+      </ul>
+      <a href="contact.html" class="btn-ghost" style="width:100%;justify-content:center">Get Started</a>
+    </div>
+    <div class="price-card featured reveal d1">
+      <div class="pc-tier"><span class="feat-badge">Most Popular</span></div>
+      <div class="pc-name">Partner</div>
+      <div class="pc-price">$6K<span style="color:rgba(0,0,0,.4)"> / project</span></div>
+      <p class="pc-desc">Full web apps, chatbots, and dashboards with integrations.</p>
+      <div class="pc-divider"></div>
+      <ul class="pc-features">
+        <li>Unlimited pages / features</li><li>API &amp; third-party integrations</li>
+        <li>Admin dashboard</li><li>WhatsApp / AI automation</li>
+        <li>90-day post-launch support</li><li>Monthly performance report</li>
+      </ul>
+      <a href="contact.html" class="btn-ghost" style="width:100%;justify-content:center;border-color:rgba(0,0,0,.3);color:var(--bg)">Start a Project</a>
+    </div>
+    <div class="price-card reveal d2">
+      <div class="pc-tier">Enterprise</div>
+      <div class="pc-name">Scale</div>
+      <div class="pc-price">Custom</div>
+      <p class="pc-desc">Long-term technical partnership for complex platforms and growing teams.</p>
+      <div class="pc-divider"></div>
+      <ul class="pc-features">
+        <li>Dedicated team allocation</li><li>Multi-platform &amp; microservices</li>
+        <li>Data engineering &amp; analytics</li><li>Ongoing retainer model</li>
+        <li>Priority support &amp; SLA</li><li>Quarterly strategy sessions</li>
+      </ul>
+      <a href="contact.html" class="btn-ghost" style="width:100%;justify-content:center">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-band">
+  <div class="stat-cell reveal"><div class="s-val">12+</div><div class="s-lbl">Projects Delivered</div></div>
+  <div class="stat-cell reveal d1"><div class="s-val">5</div><div class="s-lbl">Countries Served</div></div>
+  <div class="stat-cell reveal d2"><div class="s-val">98%</div><div class="s-lbl">Retention Rate</div></div>
+  <div class="stat-cell reveal d3"><div class="s-val">3yr</div><div class="s-lbl">Experience</div></div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="f-brand"><a href="index.html" class="f-logo">APEX<span>.</span></a><p>Digital partners for ambitious brands in the Gulf, Egypt &amp; beyond.</p></div>
+    <div class="f-col"><h4>Services</h4><a href="services.html">Web Development</a><a href="services.html">AI &amp; Chatbots</a><a href="services.html">Marketing Systems</a><a href="services.html">UI / UX Design</a></div>
+    <div class="f-col"><h4>Company</h4><a href="about.html">About</a><a href="work.html">Our Work</a><a href="contact.html">Contact</a></div>
+    <div class="f-col"><h4>Contact</h4><a href="mailto:hello@apex.io">hello@apex.io</a><a href="#">+20 100 000 0000</a><a href="#">LinkedIn</a><a href="#">WhatsApp</a></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 APEX Studio — All rights reserved</p><a href="#">Privacy Policy</a></div>
+</footer>
+
+<script src="shared.js"></script>
+<script>
+function toggleAcc(header){
+  const item=header.closest('.acc-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.acc-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)item.classList.add('open');
+}
+</script>
+</body>
+</html>
